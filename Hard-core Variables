@@ -1,0 +1,23 @@
+# weather_model_stage1.py
+
+# Hardcoded coefficients and target temperature
+a = -0.5
+b = 4
+c = -10
+T_target = 0  # Target temperature to solve for time
+
+# Solving at^2 + bt + (c - T_target) = 0
+from math import sqrt
+
+A = a
+B = b
+C = c - T_target
+
+discriminant = B**2 - 4*A*C
+
+if discriminant >= 0:
+    t1 = (-B + sqrt(discriminant)) / (2*A)
+    t2 = (-B - sqrt(discriminant)) / (2*A)
+    print(f"Solutions: t1 = {t1:.2f}, t2 = {t2:.2f}")
+else:
+    print("No real solution.")
